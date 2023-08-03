@@ -14,10 +14,10 @@ Generate G-Code from text and plot it on a 3D printer. Originally configured for
 * Run [layout.py](src/layout.py) to generate the layout configuration.
 * Once you have mounted the marker to your printhead, adjust the parameters in [gcode.py](src/gcode.py) accordingly.
     * `origin`: The (x-coordinate, y-coordinate) when marker is at the origin.
-    * `markerUpZ`: The z-coordinate when marker is hovering.
-    * `markerDownZ`: The z-coordinate when marker is plotting.
+    * `zHover`: The z-coordinate when marker is hovering.
+    * `zPlot`: The z-coordinate when marker is plotting.
 * In [gcode.py](src/gcode.py), run `saveGcode("Your desired text")` to generate the G-Code under [assets](src/assets). You will get an `AssertionError` if the text does not fit with the given layout parameters.
-* Create a `.env` file and input your OctoPrint API key as `apiKey=YOUR_API_KEY`.
+* Create a `.env` file in the project directory and input your OctoPrint API key as `apiKey=YOUR_API_KEY`.
 * Update `octoPrintUrl` in [print.py](src/print.py) to match your OctoPrint instance.
 * Run `printFile(assetsPath / "Your file name.gcode")` in [print.py](src/print.py) to upload and print.
 

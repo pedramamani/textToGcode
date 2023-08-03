@@ -5,8 +5,8 @@ import config
 import json
 
 origin = (36, 36.4)
-markerUpZ = 24
-markerDownZ = 22.5
+zHover = 24
+zPlot = 22.5
 preGcode = f'''
 G21 ; set units to mm
 M203 X100 Y100 Z10 E0 ; set speed limits (mm/s)
@@ -15,7 +15,7 @@ M205 X8 Y8 Z0.5 E0 ; set jerk limits (mm/s)
 G28 W ; home all axes
 G90 ; use absolute coordinates
 G1 F2000 ; set speed (mm/min)
-G1 Z{markerUpZ} ; hover marker
+G1 Z{zHover} ; hover marker
 '''
 postGcode = '''
 G1 X0 Y100 Z55 ; park aside
@@ -59,9 +59,9 @@ def textLines(text, layout, font):
 
 def instructionGcode(instruction, cursorPosition):
     if instruction['command'] == 'penUp':
-        return f'G1 Z{markerUpZ}'
+        return f'G1 Z{zHover}'
     if instruction['command'] == 'penDown':
-        return f'G1 Z{markerDownZ}'
+        return f'G1 Z{zPlot}'
     if instruction['command'] == 'move':
         return f'G1 X{roundValue(cursorPosition[0] + instruction["x"])} Y{roundValue(cursorPosition[1] + instruction["y"])}'
     if instruction['command'] == 'cwArc':
