@@ -1,0 +1,21 @@
+{
+    "tapeWidth": 47.5,
+    "tapeLength": 216,
+    "fontSize": 20,
+    "fontFile": "font-20.json",
+    "lineCount": 2,
+    "lineLength": 212.0,
+    "lineSpacing": 0.1,
+    "letterSpacing": 0.15,
+    "padding": 0.1,
+    "lineOrigins": [
+        [
+            2.0,
+            24.75
+        ],
+        [
+            2.0,
+            2.75
+        ]
+    ]
+}
