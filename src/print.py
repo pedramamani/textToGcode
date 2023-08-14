@@ -4,7 +4,8 @@ from config import *
 
 octoPrintUrl = 'http://192.168.1.207:5000'
 
-def printFile(filePath: pathlib.Path):
+def printFile(index: int):
+    filePath = next(assetsPath.glob(f'{index} *.gcode'), None)
     requests.post(
         f'{octoPrintUrl}/api/files/local',
         headers={'x-api-key': keyedSecrets['apiKey']},
@@ -14,7 +15,7 @@ def printFile(filePath: pathlib.Path):
 
 
 def main():
-    printFile(assetsPath / "No shoes in.gcode")
+    printFile(4)
 
 
 if __name__ == '__main__':

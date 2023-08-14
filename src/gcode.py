@@ -72,8 +72,10 @@ def instructionGcode(instruction, cursorPosition):
 
 
 def fileName(text):
-    name = ' '.join(text.split()[:3])
-    return f'{name}.gcode'
+    files = list(config.assetsPath.glob('*.gcode'))
+    indices = [int(file.name.split(' ')[0]) for file in files]
+    index = max(indices) + 1 if indices else 1
+    return f'{index} {text}.gcode'
 
 
 def saveGcode(text):
