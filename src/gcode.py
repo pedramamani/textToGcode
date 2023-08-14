@@ -101,7 +101,8 @@ def saveGcode(text):
 def main():
     # saveGcode("To avoid toilet clogs please don't throw stuff in")
     # saveGcode("Please use the garburator with caution")
-    saveGcode("Occupied if door is closed")
+    # saveGcode("Occupied if door is closed")
+    saveGcode("No shoes in the washer or dryer please")
 
 
 if __name__ == '__main__':

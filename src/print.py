@@ -14,7 +14,7 @@ def printFile(filePath: pathlib.Path):
 
 
 def main():
-    printFile(assetsPath / "Occupied if door.gcode")
+    printFile(assetsPath / "No shoes in.gcode")
 
 
 if __name__ == '__main__':
