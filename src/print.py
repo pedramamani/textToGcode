@@ -15,7 +15,7 @@ def printFile(index: int):
 
 
 def main():
-    printFile(4)
+    printFile(5)
 
 
 if __name__ == '__main__':

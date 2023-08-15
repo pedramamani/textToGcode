@@ -48,6 +48,8 @@ positionByNode = {
 }
 
 motionByCharacter = {
+    '0': 'mnlcbdmc',
+    '3': 'acghlnm',
     'a': 'oihjno',
     'b': 'amnlhg',
     'c': 'ihjno',
